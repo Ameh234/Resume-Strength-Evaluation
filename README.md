@@ -1,7 +1,7 @@
-Here's a professional `README.md` file for your Resume Optimizer project:
+
 
 ```markdown
-# Resume Optimizer
+# Resume Strength Evaluation
 
 A Flask-based web application that analyzes resumes against job-specific keywords and provides optimization feedback.
 
