@@ -1,36 +1,95 @@
-# Resume Strength Evaluation
+Here's a professional `README.md` file for your Resume Optimizer project:
 
-## Objective
-Score resume based on keywords and structure
+```markdown
+# Resume Optimizer
 
-## Possible Computational Techniques
-1. Keyword matching
-2. Scoring rubric
+A Flask-based web application that analyzes resumes against job-specific keywords and provides optimization feedback.
 
-## Flask UI Component
-1. Text area input; score and improvement advice
+## Features
+- Scores resumes on a 0-100 scale
+- Identifies missing industry-specific keywords
+- Checks for essential resume sections (Experience, Education, Skills)
+- Supports Data Science and Marketing job targets
 
-## Types of Dataset
-1. Job posting keywords
-2. hiring manager preferences
+## Prerequisites
+- Python 3.7+
+- pip package manager
 
-## Possible Sources for Dataset
-1. HR databases
-2. job description corpora
-3. ATS system data
+## Installation
 
-## Dataset URLs
-1. https://www.kaggle.com/datasets/ravichaubey1506/job-description-dataset
-2. https://www.onetonline.org/
+1. Clone the repository:
+```bash
+git clone https://github.com/Ameh234/Resume-Strength-Evaluation.git
+cd resume-optimizer
+```
 
-## Setup Instructions
-21. Resume Optimiser Expert System
-1. Create a Flask application with resume text input area and job target field
-2. Implement keyword matching against industry-specific terms
-3. Design scoring rubric based on resume best practices
-4. Build a database of effective resume components and industry keywords
-5. Implement ATS simulation for resume screening
-6. Generate resume score with section-by-section feedback
-7. Include specific improvement suggestions with examples
-8. Create visual strength indicator for different resume sections
-9. Test with various resume types and job targets
+2. Create and activate a virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Setup
+
+1. Create required directories:
+```bash
+mkdir -p model data/industry_keywords static
+```
+
+2. Add keyword files:
+```bash
+echo -e "python\nmachine learning\ndata analysis" > data/industry_keywords/data_science.txt
+echo -e "seo\ngoogle ads\nsocial media" > data/industry_keywords/marketing.txt
+```
+
+3. Train the model:
+```bash
+python train_model.py
+```
+
+## Usage
+
+1. Start the Flask development server:
+```bash
+python app.py
+```
+
+2. Access the application at:
+```
+http://localhost:5000
+```
+
+3. In the web interface:
+   - Select a job target
+   - Paste your resume text
+   - Click "Analyze Resume"
+
+## Project Structure
+```
+resume-optimizer/
+├── app.py                # Main application
+├── train_model.py        # Model training script
+├── requirements.txt      # Dependencies
+├── templates/
+│   ├── index.html        # Input form
+│   └── result.html       # Results page
+├── model/                # Saved models
+├── data/
+│   └── industry_keywords/ # Job-specific keywords
+└── static/               # Static files
+```
+
+## Limitations
+- Currently uses a small training dataset
+- Only supports plain text input (no file upload)
+- Limited to Data Science and Marketing roles
+
+
+
+
